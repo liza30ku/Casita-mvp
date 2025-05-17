@@ -1,11 +1,35 @@
 services:
+  # Frontend (Next.js)
   - type: web
-    name: cassita
+    name: cassita-frontend
+    plan: free
     runtime: node
+    nodeVersion: 20  # Next.js 15 требует Node.js 20+
     build:
-      command: npm install && npm run build
+      command: |
+        npm install
+        npm run build
+    start: npm start
     envVars:
       - key: NODE_ENV
         value: production
-    start: npm start
+      - key: NEXT_PUBLIC_API_URL
+        value: https://cassita-backend.onrender.com
+    region: frankfurt
+
+  # Backend (FastAPI)
+  - type: web
+    name: cassita-backend
+    runtime: python
+    pythonVersion: "3.11"
+    build:
+      command: |
+        pip install -r requirements.txt
+    start: |
+      python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HF_TOKEN
+        value: your_huggingface_token_here
+      - key: DEVICE
+        value: cpu  # Для Render без GPU
     region: frankfurt
