@@ -4,7 +4,6 @@ services:
     runtime: node
     build:
       command: npm install && npm run build
-    env: node
     envVars:
       - key: NODE_ENV
         value: production
