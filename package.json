@@ -1,11 +1,41 @@
 {
-  "name": "cassita-3",
-  "version": "1.0.0",
-  "description": "��#\u0000 \u0000C\u0000a\u0000s\u0000i\u0000t\u0000a\u0000-\u0000m\u0000v\u0000p\u0000\r\u0000 \u0000",
-  "main": "index.js",
+  "name": "valltest",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@tanstack/react-query": "^5.74.4",
+    "@types/better-sqlite3": "^7.6.13",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
+    "better-auth": "^1.2.7",
+    "better-sqlite3": "^11.9.1",
+    "clsx": "^2.1.1",
+    "next": "15.3.0",
+    "next-auth": "^4.24.11",
+    "pg": "^8.15.6",
+    "postcss": "^8.5.3",
+    "postcss-nesting": "^13.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sqlite3": "^5.1.7",
+    "swiper": "^11.2.6",
+    "zod": "^3.24.3",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/pg": "^8.11.14",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-query": "^1.2.8",
+    "postcss-nested": "^7.0.2",
+    "typescript": "^5"
+  }
 }
