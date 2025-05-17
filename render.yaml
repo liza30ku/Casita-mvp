@@ -1,12 +1,12 @@
 services:
   - type: web
     name: cassita
-    runtime: node  # Указываем среду выполнения
+    runtime: node
     build:
       command: npm install && npm run build
-    start: npm start
     env: node
     envVars:
       - key: NODE_ENV
         value: production
+    start: npm start
     region: frankfurt
