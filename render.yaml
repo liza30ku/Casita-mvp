@@ -4,7 +4,7 @@ services:
     name: cassita-frontend
     plan: free
     runtime: node
-    nodeVersion: 20  # Next.js 15 требует Node.js 20+
+    nodeVersion: 20  # Правильное название поля (не modeVersion!)
     build:
       command: |
         npm install
@@ -21,14 +21,14 @@ services:
   - type: web
     name: cassita-backend
     runtime: python
-    pythonVersion: "3.11"
+    pythonVersion: "3.11"  # Правильная версия Python (не 9.1l!)
     build:
       command: |
         pip install -r requirements.txt
     start: |
       python -m uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: HF_TOKEN
+      - key: HF_TOKEN  # Исправлено WF_TOKEN → HF_TOKEN
         value: your_huggingface_token_here
       - key: DEVICE
         value: cpu  # Для Render без GPU
